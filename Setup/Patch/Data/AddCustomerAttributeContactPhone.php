@@ -48,11 +48,10 @@ class AddCustomerAttributeContactPhone implements DataPatchInterface
         $attributeSetId = $customerSetup->getDefaultAttributeSetId($customerEntity->getEntityTypeId());
         $attributeGroup = $customerSetup->getDefaultAttributeGroupId($customerEntity->getEntityTypeId(), $attributeSetId);
         $customerSetup->addAttribute(Customer::ENTITY, 'contact_phone_Number', [
-            'type' => 'int',
+            'type' => 'varchar',
             'input' => 'text',
             'label' => 'Contact Phone Number',
             'required' => true,
-            'default' => '',
             'visible' => true,
             'user_defined' => true,
             'system' => false,
@@ -62,7 +61,7 @@ class AddCustomerAttributeContactPhone implements DataPatchInterface
             'is_searchable_in_grid' => true,
             'position' => 299
         ]);
-        $newAttribute = $this->eavConfig->getAttribute(Customer::ENTITY, 'contact_phone');
+        $newAttribute = $this->eavConfig->getAttribute(Customer::ENTITY, 'contact_phone_Number');
         $newAttribute->addData([
             'used_in_forms' => ['adminhtml_checkout','adminhtml_customer','customer_account_edit','customer_account_create'],
             'attribute_set_id' => $attributeSetId,

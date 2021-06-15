@@ -21,13 +21,13 @@ class CompanySelect extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractS
 
     public function getAllOptions()
     {
-        $this->_options = [
-            ['lable' => __('Select option ...'), 'value' => '0'],
-            ['lable' => __('CBD Manufacturer'), 'value' => '1'],
-            ['lable' => __('CBD Brand and Marketing company'), 'value' => '2'],
-            ['lable' => __('CBD Extractor'), 'value' => '3'],
-            ['lable' => __('Other'), 'value' => '4']
-        ];
+            $this->_options = [
+                ['label' => __('Select option ...'), 'value' => ''],
+                ['label' => __('CBD Manufacturer'), 'value' => 1],
+                ['label' => __('CBD Brand and Marketing company'), 'value' => 2],
+                ['label' => __('CBD Extractor'), 'value' => 3],
+                ['label' => __('Other'), 'value' => 4]
+            ];
         return $this->_options;
     }
 }
