@@ -175,7 +175,7 @@
         <div class="field contact required">
             <label for="contact_phone_Number" class="label"><span><?= $block->escapeHtml(__('Contact Phone')) ?></span></label>
             <div class="control" style="display: flex">
-                <select name="phone_code" id="" style="width: 30%">
+                <select name="phone_code" id="valueContry" style="width: 30%">
                     <?php foreach ($rycode as $key => $value) : ?>
                         <option value="<?= $value ?>"><?= $key . " " . "( + $value)"?></option>
                     <?php endforeach ?>
@@ -295,6 +295,11 @@ require([
                     $('#organization_name').val('');
                 }
             });
+
+            $('#valueContry').change(() => {
+                $('#contact_phone_Number').val($('#valueContry').val());
+            })
         });
+
     });
 </script>
